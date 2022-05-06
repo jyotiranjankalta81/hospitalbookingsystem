@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    /* width: 100vh; */
+    /* display: flex; */
+    /* text-items: center; */
+    text-align: center;
+    border: 5px solid rgb(61, 61, 65);
+    padding: 15px 15px;
+    font-size: 25px;
+    color: white;
+    background-color: rgb(122, 197, 224);
+}
