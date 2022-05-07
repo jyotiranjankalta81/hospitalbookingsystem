@@ -1,29 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./booking.css";
 import { useDispatch } from 'react-redux';
 import { reservationUser } from '../../actions/reservationAction';
-// import { reservationUser } from '../../actions/reservationAction';
+import { useNavigate } from "react-router-dom"
 
 const Booking = () => {
 
+
     const [name, setName] = useState('');
     const [date, setDate] = useState('');
-
-    // const newReservation = useSelector(state => state.newReservation);
-
-    // const { order, loading, error } = newReservation;
+    const [room, setRoom] = useState("");
+    const [quantity, setQuantity] = useState("");
+    // const navigate = useNavigate();
 
     // dispatch
     const dispatch = useDispatch();
     const bookingSubmit = (e) => {
-        // createReservation
-        e.preventDefault();
-        // dispatch(reservationUser(name, date));
-        dispatch(reservationUser(name, date))
-        // console.log(order, loading, error);
-        console.log("name " + name);
-        console.log("date" + date);
+        // e.preventDefault();
+        dispatch(reservationUser(name, date, room, quantity))
+        alert("your order booked succefully");
     }
+
+    // useEffect(() => {
+    //     navigate("/");
+    // }, [navigate])
+
+
 
     return (
         <div className='bookingslot'>
@@ -50,6 +52,28 @@ const Booking = () => {
                             name='date'
                             value={date}
                             onChange={e => setDate(e.target.value)}
+                        />
+                    </div>
+                    <div className='bookingRoom'>
+                        <label htmlFor="cars">Choose the Room:</label>
+                        <select id="cars" required name="room" onChange={e => setRoom(e.target.value)}>
+                            <option value="NormalRoom">Normal Room</option>
+                            <option value="OxygenRoom">Oxygen Room</option>
+                            <option value="ICU">ICU</option>
+                            {/* <option value="audi">Audi</option> */}
+                        </select>
+
+                    </div>
+                    <div className='bookingRoomQuantity'>
+                        <label for="quantity">Choose Number of Rooms:</label>
+                        <input
+                            type="text"
+                            inputMode="numeric"
+                            placeholder="Select Room Quantity"
+                            required
+                            name='quantity'
+                            value={quantity}
+                            onChange={e => setQuantity(e.target.value)}
                         />
                     </div>
                     {/* <br /> */}

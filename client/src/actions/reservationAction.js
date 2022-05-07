@@ -1,13 +1,13 @@
 import axios from "axios"
 
-export const reservationUser = (name, date) => async (dispatch) => {
+export const reservationUser = (name, date, room, quantity) => async (dispatch) => {
     try {
 
         dispatch({
             type: "ReservationRequest",
         });
 
-        const { data } = await axios.post("/api/v1//reservation/new", { name, date }, {
+        const { data } = await axios.post("/api/v1//reservation/new", { name, date, room, quantity }, {
             headers: {
                 "Content-Type": "application/json"
             },

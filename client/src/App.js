@@ -1,4 +1,5 @@
 // import logo from './logo.svg';
+// import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import Booking from './component/Booking/Booking';
 import Display from './component/Display/Display';
@@ -11,6 +12,7 @@ function App() {
 
       {/* <h3>Namaste</h3> */}
       <Header />
+
       <Display />
       <Booking />
       <Footer />

@@ -52,6 +52,33 @@
 
 }
 
+.bookingRoom>select{
+    width: 380px;
+    height: 45px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 17px;
+    padding: 10px 10px ;
+    margin: 15px 15px ;
+    color: solid black;
+    background-color: aliceblue;
+
+
+}
+.bookingRoomQuantity>input{
+    width: 350px;
+    height: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 17px;
+    padding: 10px 10px ;
+    margin: 15px 15px ;
+    color: solid black;
+    background-color: aliceblue;
+
+
+}
+
 .bookingBtn{
     width: 150px;
     height: 45px;
